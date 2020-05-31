@@ -56,5 +56,30 @@ public class databaseDAO {
 		
 	}
 	
+	//MODIFICAR 
+	
+	public boolean modificarCliente(Cliente a) {
+		
+		String sql = "Update cliente Set Nombre = '"+a.getNombre()+"'"
+				+ ", Apellido = '"+ a.getApellido()+"'"
+				+ ", Edad = '"+a.getEdad()+"'"
+				+ ", Direccion = "+a.getDireccion()+""
+				+ ", CP = "+a.getCp()+""
+				+ ", Telefono = '"+a.getTelefono()+ "' WHERE cliente_ID='"+a.getCliente_ID()+"'";
+		
+		boolean res =  new ConexionBD().ejInstr(sql);
+		return res;
+	}
+	
+	public boolean modificarReservacion(Reservacion a) {
+		
+		String sql = "Update reservacion Set Fecha_Ingreso = '"+a.getFechaIngreso()+"'"
+				+ ", Fecha_Salida = '"+ a.getFechaSalida()+"'"
+				+ ", Cantidad_Personas = '"+a.getCantidadPersonas()+"'"
+				+ ", Tipo_Habitacion = "+a.getTipoHabitacion()+ "' WHERE Reserva_ID ='"+a.getReserva_ID()+"'";
+		
+		boolean res =  new ConexionBD().ejInstr(sql);
+		return res;
+	}
 	
 }
