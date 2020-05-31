@@ -2,15 +2,15 @@ package Modelo;
 
 public class Reservacion {
 	
-	private String reserva_ID;
+	private int reserva_ID;
 	private String fechaIngreso;
 	private String fechaSalida;
 	private String cantidadPersonas;
 	private String tipoHabitacion;
-	private String cliente_ID;
+	private int cliente_ID;
 	
-	public Reservacion(String reserva_ID, String fechaIngreso, String fechaSalida, String cantidadPersonas,
-			String tipoHabitacion, String cliente_ID) {
+	public Reservacion(int reserva_ID, String fechaIngreso, String fechaSalida, String cantidadPersonas,
+			String tipoHabitacion, int cliente_ID) {
 		super();
 		this.reserva_ID = reserva_ID;
 		this.fechaIngreso = fechaIngreso;
@@ -20,11 +20,11 @@ public class Reservacion {
 		this.cliente_ID = cliente_ID;
 	}
 
-	public String getReserva_ID() {
+	public int getReserva_ID() {
 		return reserva_ID;
 	}
 
-	public void setReserva_ID(String reserva_ID) {
+	public void setReserva_ID(int reserva_ID) {
 		this.reserva_ID = reserva_ID;
 	}
 
@@ -60,11 +60,11 @@ public class Reservacion {
 		this.tipoHabitacion = tipoHabitacion;
 	}
 
-	public String getCliente_ID() {
+	public int getCliente_ID() {
 		return cliente_ID;
 	}
 
-	public void setCliente_ID(String cliente_ID) {
+	public void setCliente_ID(int cliente_ID) {
 		this.cliente_ID = cliente_ID;
 	}
 	
