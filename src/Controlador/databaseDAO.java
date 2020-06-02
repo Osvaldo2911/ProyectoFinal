@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import ConecciónBaseDeDatos.ConexionBD;
-import Modelo.Alumno;
 import Modelo.Cliente;
 import Modelo.Habitacion;
 import Modelo.Reservacion;
@@ -85,7 +84,7 @@ public class databaseDAO {
 		return res;
 	}
 	
-	public Cliente buscarAlumno(int cliente_ID) {
+	public Cliente buscarCliente(int cliente_ID) {
 		
 		
 		String sql = "SELECT * FROM cliente WHERE cliente_ID = '"+cliente_ID+"'";
@@ -95,7 +94,7 @@ public class databaseDAO {
 		try {
 			res.last();
 			
-			return new Cliente(res.getString("cliente_ID"),res.getString(2),res.getString(3),res.getString(4),res.getByte(5),res.getByte(6),res.getString(7));
+			return new Cliente(res.getInt(cliente_ID), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7));
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
