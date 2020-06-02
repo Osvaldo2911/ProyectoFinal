@@ -103,4 +103,23 @@ public class databaseDAO {
 		}
 	}
 	
+	public Reservacion buscarReservacion(int reserva_ID) {
+		
+		
+		String sql = "SELECT * FROM cliente WHERE cliente_ID = '"+reserva_ID+"'";
+		
+		ResultSet res = new ConexionBD().ejecutarConsulta(sql);
+		
+		try {
+			res.last();
+			
+			return new Reservacion(res.getInt(reserva_ID), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getInt(6));
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			
+			return null;
+		}
+	}
+	
 }
