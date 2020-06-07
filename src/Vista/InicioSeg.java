@@ -23,7 +23,7 @@ class Login extends JFrame{
 
 		Registro.setSize(400, 300);
 		Registro.setLocationRelativeTo(null);
-		Registro.setVisible(true);
+		Registro.setVisible(false);
 		Registro.getContentPane().setBackground(new Color(241, 236, 235 ));
 		Registro.setResizable(false);
 		
