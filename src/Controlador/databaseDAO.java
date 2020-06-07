@@ -35,7 +35,8 @@ public class databaseDAO {
 	}
 	
 	public boolean agregarRegistro(Registro a) {
-		String sql = "insert into registro Values('"+a.getNombre()+"','"+a.getContraseña()+"')";
+	
+		String sql ="INSERT INTO registro (Nombre, Contraseña) VALUES ('"+a.getNombre()+"','"+a.getContraseña()+"')";
 		
 		return new ConexionBD().ejInstr(sql);
 		
@@ -123,7 +124,7 @@ public class databaseDAO {
 	public Reservacion buscarReservacion(int reserva_ID) {
 		
 		
-		String sql = "SELECT * FROM cliente WHERE cliente_ID = '"+reserva_ID+"'";
+		String sql = "SELECT * FROM reservacion WHERE reserva_ID = '"+reserva_ID+"'";
 		
 		ResultSet res = new ConexionBD().ejecutarConsulta(sql);
 		
@@ -137,6 +138,14 @@ public class databaseDAO {
 			
 			return null;
 		}
+	}
+	
+	public boolean buscarRegistro(String nombre) {
+		
+		String sql = "SELECT * FROM registro WHERE Nombre = BINARY '"+nombre+"';";
+		boolean res =  new ConexionBD().ejInstr(sql);
+		
+		return res;
 	}
 	
 }
