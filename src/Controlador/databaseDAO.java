@@ -3,6 +3,7 @@ package Controlador;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import ConexionBaseDato.ConexionBD;
 import Modelo.Cliente;
 import Modelo.Habitacion;
 import Modelo.Registro;
@@ -15,21 +16,30 @@ public class databaseDAO {
 	public boolean agregarCliente(Cliente a) {
 		String sql = "insert into clientes Values('"+a.getCliente_ID()+"','"+a.getNombre()+"','"+a.getApellido()+"','"+a.getEdad()+"',"+a.getDireccion()+","+a.getCp()+",'"+a.getTelefono()+ 	"')";
 		
-		return new ConexionBD().ejInstr(sql);
+		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
+        System.out.println("ALUMNO DAO: " + resultado);
+
+        return resultado;
 		
 	}
 	
 	public boolean agregarReservacion(Reservacion a) {
 		String sql = "insert into reservacion Values('"+a.getReserva_ID()+"','"+a.getFechaIngreso()+"','"+a.getFechaSalida()+"','"+a.getCantidadPersonas()+","+a.getTipoHabitacion()+","+a.getCliente_ID()+"')";
 		
-		return new ConexionBD().ejInstr(sql);
+		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
+        System.out.println("ALUMNO DAO: " + resultado);
+
+        return resultado;
 		
 	}
 	
 	public boolean agregarHabitacion(Habitacion a) {
 		String sql = "insert into habitacion Values('"+a.getHabitacion_ID()+"','"+a.getTipoHabitacion()+"','"+a.getNroHabitacion()+"','"+a.getNroPiso()+","+a.getPrecio()+"')";
 		
-		return new ConexionBD().ejInstr(sql);
+		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
+        System.out.println("ALUMNO DAO: " + resultado);
+
+        return resultado;
 		
 	}
 	
@@ -37,7 +47,10 @@ public class databaseDAO {
 	
 		String sql ="INSERT INTO registro (Nombre, Contraseña) VALUES ('"+a.getNombre()+"','"+a.getContraseña()+"')";
 		
-		return new ConexionBD().ejInstr(sql);
+		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
+        System.out.println("ALUMNO DAO: " + resultado);
+
+        return resultado;
 		
 	}
 	
@@ -46,10 +59,10 @@ public class databaseDAO {
 	public boolean eliminarCliente(int cliente_ID) {
 		
 		String sql = "INSERT INTO clienteborrado SELECT * FROM cliente WHERE cliente_ID = '"+cliente_ID+"'";
-		boolean duplicado =  new ConexionBD().ejInstr(sql);
+		boolean duplicado =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		sql = "Delete From cliente where cliente_ID = '"+cliente_ID+"'";
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		return res;
 		
@@ -58,10 +71,10 @@ public class databaseDAO {
 	public boolean eliminarReservacion(int reserva_ID) {
 		
 		String sql = "INSERT INTO reseracionborrada SELECT * FROM reservacion WHERE reserva_ID = '"+reserva_ID+"'";
-		boolean duplicado =  new ConexionBD().ejInstr(sql);
+		boolean duplicado =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		sql = "Delete From reservacion where reserva_ID = '"+reserva_ID+"'";
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		return res;
 		
@@ -70,7 +83,7 @@ public class databaseDAO {
 	public boolean eliminarRegistro(String a) {
 		
 		String sql = "Delete From registro where nombre = '"+a+"'";
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		return res;
 		
@@ -86,7 +99,7 @@ public class databaseDAO {
 				+ ", CP = "+a.getCp()+""
 				+ ", Telefono = '"+a.getTelefono()+ "' WHERE cliente_ID='"+a.getCliente_ID()+"'";
 		
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		return res;
 	}
 	
@@ -97,7 +110,7 @@ public class databaseDAO {
 				+ ", Cantidad_Personas = '"+a.getCantidadPersonas()+"'"
 				+ ", Tipo_Habitacion = "+a.getTipoHabitacion()+ "' WHERE Reserva_ID ='"+a.getReserva_ID()+"'";
 		
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		return res;
 	}
 	
@@ -106,7 +119,7 @@ public class databaseDAO {
 		
 		String sql = "SELECT * FROM cliente WHERE cliente_ID = '"+cliente_ID+"'";
 		
-		ResultSet res = new ConexionBD().ejecutarConsulta(sql);
+		ResultSet res = new ConexionBD().ejecutarConsultaRegistros(sql);
 		
 		try {
 			res.last();
@@ -125,7 +138,7 @@ public class databaseDAO {
 		
 		String sql = "SELECT * FROM reservacion WHERE reserva_ID = '"+reserva_ID+"'";
 		
-		ResultSet res = new ConexionBD().ejecutarConsulta(sql);
+		ResultSet res = new ConexionBD().ejecutarConsultaRegistros(sql);
 		
 		try {
 			res.last();
@@ -142,7 +155,7 @@ public class databaseDAO {
 	public boolean buscarRegistro(String nombre) {
 		
 		String sql = "SELECT * FROM registro WHERE Nombre = BINARY '"+nombre+"';";
-		boolean res =  new ConexionBD().ejInstr(sql);
+		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		
 		return res;
 	}
