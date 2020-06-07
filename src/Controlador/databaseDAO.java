@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import ConecciónBaseDeDatos.ConexionBD;
 import Modelo.Cliente;
 import Modelo.Habitacion;
+import Modelo.Registro;
 import Modelo.Reservacion;
 
 public class databaseDAO {
@@ -33,6 +34,13 @@ public class databaseDAO {
 		
 	}
 	
+	public boolean agregarRegistro(Registro a) {
+		String sql = "insert into registro Values('"+a.getNombre()+"','"+a.getContraseña()+"')";
+		
+		return new ConexionBD().ejInstr(sql);
+		
+	}
+	
 	
 	//ELIMINAR
 	public boolean eliminarCliente(int cliente_ID) {
@@ -43,7 +51,7 @@ public class databaseDAO {
 		sql = "Delete From cliente where cliente_ID = '"+cliente_ID+"'";
 		boolean res =  new ConexionBD().ejInstr(sql);
 		
-		return false;
+		return res;
 		
 	} 
 	
@@ -55,9 +63,18 @@ public class databaseDAO {
 		sql = "Delete From reservacion where reserva_ID = '"+reserva_ID+"'";
 		boolean res =  new ConexionBD().ejInstr(sql);
 		
-		return false;
+		return res;
 		
 	}
+	
+	public boolean eliminarRegistro(String a) {
+		
+		String sql = "Delete From registro where nombre = '"+a+"'";
+		boolean res =  new ConexionBD().ejInstr(sql);
+		
+		return res;
+		
+	} 
 	
 	//MODIFICAR 
 	public boolean modificarCliente(Cliente a) {
