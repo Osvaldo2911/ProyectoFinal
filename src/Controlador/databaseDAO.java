@@ -3,7 +3,6 @@ package Controlador;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import ConecciónBaseDeDatos.ConexionBD;
 import Modelo.Cliente;
 import Modelo.Habitacion;
 import Modelo.Registro;
