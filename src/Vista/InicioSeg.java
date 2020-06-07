@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -66,9 +68,34 @@ class Login extends JFrame{
 		Registro.add(lvUsuarioR);
 		
 		JTextField UsuarioR = new JTextField(10);
-		UsuarioR.setText("");
 		UsuarioR.setBounds(85, 70, 200, 30);
 		Registro.add(UsuarioR);
+		UsuarioR.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char car = e.getKeyChar();
+		        if((car<'a' || car>'z') && (car<'A' || car>'Z')) {
+		            if((car<'0' || car>'9')) {
+		            	e.consume();
+		            }
+		        }
+		        	
+		        
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+				
+			}
+		});
 		
 		JLabel lvContraseñaR = new JLabel("Contraseña");
 		lvContraseñaR.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
@@ -81,6 +108,28 @@ class Login extends JFrame{
 		ContraR.setEchoChar('*');
 		ContraR.setBounds(85, 120, 200, 30);
 		Registro.add(ContraR);
+		ContraR.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char car = e.getKeyChar();
+		        if((car<'!' || car>'@') && (car<'A' || car>'}')) e.consume();
+		        	
+		        
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+				
+			}
+		});
 		
 		JLabel lvContraseñaRC = new JLabel("Confirmar contraseña");
 		lvContraseñaRC.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
@@ -93,10 +142,43 @@ class Login extends JFrame{
 		ContraRC.setEchoChar('*');
 		ContraRC.setBounds(85, 170, 200, 30);
 		Registro.add(ContraRC);
+		ContraRC.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char car = e.getKeyChar();
+		        if((car<'!' || car>'@') && (car<'A' || car>'}')) e.consume();
+		        	
+		        
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+				
+			}
+		});
 		
 		JButton ISR = new JButton("Registrar");
 		ISR.setBounds(85, 210, 200, 30);
 		Registro.add(ISR);
+		ISR.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(true) {
+					
+				}
+				
+			}
+		});
+		
 		
 		JLabel iniciaSecion = new JLabel("Iniciar sesion");
 		iniciaSecion.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
