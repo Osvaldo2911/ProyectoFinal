@@ -14,7 +14,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 class Login extends JFrame{
 	
 	public Login() {
@@ -74,7 +73,7 @@ class Login extends JFrame{
 		
 		JLabel fondo3 = new JLabel(" ");
 		fondo3.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-		fondo3.setBounds(0, 275, 400, 25);
+		fondo3.setBounds(0, 280, 400, 25);
 		fondo3.setBackground(new Color(40, 116, 166 , 50));
 		fondo3.setOpaque(true);
 		fondo3.setVisible(false);
@@ -83,15 +82,15 @@ class Login extends JFrame{
 		
 		JLabel alimentacion4 = new JLabel("<html><body style='text-align: center'>Nombre de usuario en uso");
 		alimentacion4.setFont(new Font("Arial", Font.BOLD, 10));
-		alimentacion4.setBounds(125, 280, 250, 25);
-		alimentacion4.setForeground(new Color(236, 112, 99 ));
+		alimentacion4.setBounds(125, 273, 250, 25);
+		alimentacion4.setForeground(new Color(56, 53, 52 ));
 		alimentacion4.setVisible(false);
 		Registro.add(alimentacion4);
 		
 		JLabel fondo4 = new JLabel(" ");
 		fondo4.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
 		fondo4.setBounds(0, 275, 400, 25);
-		fondo4.setBackground(new Color(40, 116, 166 , 50));
+		fondo4.setBackground(new Color(146, 43, 33, 50));
 		fondo4.setOpaque(true);
 		fondo4.setVisible(false);
 		Registro.add(fondo4);
@@ -106,7 +105,7 @@ class Login extends JFrame{
 		
 		JLabel fondo5 = new JLabel(" ");
 		fondo5.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-		fondo5.setBounds(0, 275, 400, 25);
+		fondo5.setBounds(0, 280, 400, 25);
 		fondo5.setBackground(new Color(40, 116, 166 , 50));
 		fondo5.setOpaque(true);
 		fondo5.setVisible(false);
@@ -122,11 +121,41 @@ class Login extends JFrame{
 		
 		JLabel fondo6 = new JLabel(" ");
 		fondo6.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-		fondo6.setBounds(0, 275, 400, 25);
+		fondo6.setBounds(0, 280, 400, 25);
 		fondo6.setBackground(new Color(40, 116, 166 , 50));
 		fondo6.setOpaque(true);
 		fondo6.setVisible(false);
 		Registro.add(fondo6);
+		
+		JLabel alimentacion7 = new JLabel("<html><body style='text-align: center'>Registro con exito");
+		alimentacion7.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion7.setBounds(140, 280, 250, 25);
+		alimentacion7.setForeground(new Color(24, 106, 59 ));
+		alimentacion7.setVisible(false);
+		Registro.add(alimentacion7);
+		
+		JLabel fondo7 = new JLabel(" ");
+		fondo7.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo7.setBounds(0, 280, 400, 25);
+		fondo7.setBackground(new Color(40, 116, 166 , 50));
+		fondo7.setOpaque(true);
+		fondo7.setVisible(false);
+		Registro.add(fondo7);
+		
+		JLabel alimentacion8 = new JLabel("<html><body style='text-align: center'>Registro fallido");
+		alimentacion8.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion8.setBounds(140, 280, 250, 25);
+		alimentacion8.setForeground(new Color(236, 112, 99 ));
+		alimentacion8.setVisible(false);
+		Registro.add(alimentacion8);
+		
+		JLabel fondo8 = new JLabel(" ");
+		fondo8.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo8.setBounds(0, 280, 400, 25);
+		fondo8.setBackground(new Color(40, 116, 166 , 50));
+		fondo8.setOpaque(true);
+		fondo8.setVisible(false);
+		Registro.add(fondo8);
 		
 		// ALIMENTACION END
 		
@@ -183,6 +212,20 @@ class Login extends JFrame{
 			public void focusGained(FocusEvent e) {
 				alimentacion1.setVisible(true);
 				fondo1.setVisible(true);
+				alimentacion2.setVisible(false);
+				fondo2.setVisible(false);
+				alimentacion3.setVisible(false);
+				fondo3.setVisible(false);
+				alimentacion4.setVisible(false);
+				fondo4.setVisible(false);
+				alimentacion5.setVisible(false);
+				fondo5.setVisible(false);
+				alimentacion6.setVisible(false);
+				fondo6.setVisible(false);
+				alimentacion7.setVisible(false);
+				fondo7.setVisible(false);
+				alimentacion8.setVisible(false);
+				fondo8.setVisible(false);
 			}
 		});
 		UsuarioR.addKeyListener(new KeyListener() {
@@ -233,8 +276,22 @@ class Login extends JFrame{
 			
 			@Override
 			public void focusGained(FocusEvent e) {
+				alimentacion1.setVisible(false);
+				fondo1.setVisible(false);
 				alimentacion2.setVisible(true);
 				fondo2.setVisible(true);
+				alimentacion3.setVisible(false);
+				fondo3.setVisible(false);
+				alimentacion4.setVisible(false);
+				fondo4.setVisible(false);
+				alimentacion5.setVisible(false);
+				fondo5.setVisible(false);
+				alimentacion6.setVisible(false);
+				fondo6.setVisible(false);
+				alimentacion7.setVisible(false);
+				fondo7.setVisible(false);
+				alimentacion8.setVisible(false);
+				fondo8.setVisible(false);
 			}
 		});
 		
@@ -296,27 +353,204 @@ class Login extends JFrame{
 			}
 		});
 		
+		
+		
 		JButton ISR = new JButton("Registrar");
 		ISR.setBounds(85, 210, 200, 30);
 		Registro.add(ISR);
-		ISR.setFocusPainted(true);
 		ISR.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				databaseDAO b = new databaseDAO();
-				Modelo.Registro encontrado = b.buscarRegistro("Osvaldo");
-				boolean en;
-				try {
-					en = encontrado.getNombre().equals("Osvaldo");
-				} catch (java.lang.NullPointerException e2) {
-					en = false;
-				}
+				Timer t = null;
+				String n;
+				String c;
 				
-				if (en) {
-					System.out.println("Nombre en uso");
-				}else {
-					System.out.println("Nombre disponible");
+				if (UsuarioR.getText().length() >= 6) {
+					
+					databaseDAO b = new databaseDAO();
+					String UsR = UsuarioR.getText().replace(" ", "");
+					Modelo.Registro encontrado = b.buscarRegistro(UsR);
+					boolean en;
+					try {
+						en = encontrado.getNombre().equals(UsR);
+					} catch (java.lang.NullPointerException e2) {
+						en = false;
+					}
+					
+					if (en) {
+						//4
+						alimentacion1.setVisible(false);
+						fondo1.setVisible(false);
+						alimentacion2.setVisible(false);
+						fondo2.setVisible(false);
+						alimentacion3.setVisible(false);
+						fondo3.setVisible(false);
+						alimentacion4.setVisible(true);
+						fondo4.setVisible(true);
+						alimentacion5.setVisible(false);
+						fondo5.setVisible(false);
+						alimentacion6.setVisible(false);
+						fondo6.setVisible(false);
+						alimentacion7.setVisible(false);
+						fondo7.setVisible(false);
+						alimentacion8.setVisible(false);
+						fondo8.setVisible(false);
+					}else {
+						System.out.println("Nombre disponible");
+						n = UsR;
+						String con = ContraR.getText()+"".replace(" ", "");
+						boolean M = false;
+						boolean m = false;
+						boolean num = false;
+						boolean condicion = false;
+						
+						if (con.length()>8) {
+							for (int i = 0; i < con.length(); i++) {
+								int nl = con.charAt(i);
+								if (nl > 65 && nl < 90) {
+									M = true;
+								} else if (nl > 97 && nl < 122) {
+									m = true;
+								} else if (nl > 48 && nl < 57) {
+									num = true;
+								} else {
+									
+								}
+								if (M && m && num ) {
+									condicion = true;
+									break;
+								}
+							}
+							
+							if (condicion) {
+								c = con;
+								String conC = ContraRC.getText()+"".replace(" ", "");
+								
+								System.out.println(con + "----" + conC);
+								
+								if (conC.equals(c)) {
+									
+									boolean reEx = b.agregarRegistro(new Modelo.Registro(n, c));
+									UsuarioR.setText("");
+									ContraR.setText("");
+									ContraRC.setText("");
+									
+									if (reEx) {
+										//7
+										alimentacion1.setVisible(false);
+										fondo1.setVisible(false);
+										alimentacion2.setVisible(false);
+										fondo2.setVisible(false);
+										alimentacion3.setVisible(false);
+										fondo3.setVisible(false);
+										alimentacion4.setVisible(false);
+										fondo4.setVisible(false);
+										alimentacion5.setVisible(false);
+										fondo5.setVisible(false);
+										alimentacion6.setVisible(false);
+										fondo6.setVisible(false);
+										alimentacion7.setVisible(true);
+										fondo7.setVisible(true);
+										alimentacion8.setVisible(false);
+										fondo8.setVisible(false);
+									} else {
+										//8
+										alimentacion1.setVisible(false);
+										fondo1.setVisible(false);
+										alimentacion2.setVisible(false);
+										fondo2.setVisible(false);
+										alimentacion3.setVisible(false);
+										fondo3.setVisible(false);
+										alimentacion4.setVisible(false);
+										fondo4.setVisible(false);
+										alimentacion5.setVisible(false);
+										fondo5.setVisible(false);
+										alimentacion6.setVisible(false);
+										fondo6.setVisible(false);
+										alimentacion7.setVisible(false);
+										fondo7.setVisible(false);
+										alimentacion8.setVisible(true);
+										fondo8.setVisible(true);
+									}
+									
+								} else {
+									//3
+									alimentacion1.setVisible(false);
+									fondo1.setVisible(false);
+									alimentacion2.setVisible(false);
+									fondo2.setVisible(false);
+									alimentacion3.setVisible(true);
+									fondo3.setVisible(true);
+									alimentacion4.setVisible(false);
+									fondo4.setVisible(false);
+									alimentacion5.setVisible(false);
+									fondo5.setVisible(false);
+									alimentacion6.setVisible(false);
+									fondo6.setVisible(false);
+									alimentacion7.setVisible(false);
+									fondo7.setVisible(false);
+									alimentacion8.setVisible(false);
+									fondo8.setVisible(false);
+								}
+							}else {
+								
+								alimentacion1.setVisible(false);
+								fondo1.setVisible(false);
+								alimentacion2.setVisible(false);
+								fondo2.setVisible(false);
+								alimentacion3.setVisible(false);
+								fondo3.setVisible(false);
+								alimentacion4.setVisible(false);
+								fondo4.setVisible(false);
+								alimentacion5.setVisible(true);
+								fondo5.setVisible(true);
+								alimentacion6.setVisible(false);
+								fondo6.setVisible(false);
+								alimentacion7.setVisible(false);
+								fondo7.setVisible(false);
+								alimentacion8.setVisible(false);
+								fondo8.setVisible(false);
+							}
+							
+						} else {
+							alimentacion1.setVisible(false);
+							fondo1.setVisible(false);
+							alimentacion2.setVisible(false);
+							fondo2.setVisible(false);
+							alimentacion3.setVisible(false);
+							fondo3.setVisible(false);
+							alimentacion4.setVisible(false);
+							fondo4.setVisible(false);
+							alimentacion5.setVisible(true);
+							fondo5.setVisible(true);
+							alimentacion6.setVisible(false);
+							fondo6.setVisible(false);
+							alimentacion7.setVisible(false);
+							fondo7.setVisible(false);
+							alimentacion8.setVisible(false);
+							fondo8.setVisible(false);
+						}
+						
+					}
+					
+				} else {
+					alimentacion1.setVisible(false);
+					fondo1.setVisible(false);
+					alimentacion2.setVisible(false);
+					fondo2.setVisible(false);
+					alimentacion3.setVisible(false);
+					fondo3.setVisible(false);
+					alimentacion4.setVisible(false);
+					fondo4.setVisible(false);
+					alimentacion5.setVisible(false);
+					fondo5.setVisible(false);
+					alimentacion6.setVisible(true);
+					fondo6.setVisible(true);
+					alimentacion7.setVisible(false);
+					fondo7.setVisible(false);
+					alimentacion8.setVisible(false);
+					fondo8.setVisible(false);
 				}
 			}
 		});
