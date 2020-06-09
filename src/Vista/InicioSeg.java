@@ -25,11 +25,110 @@ class Login extends JFrame{
 		Registro.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Registro.setTitle("Registro");
 
-		Registro.setSize(400, 300);
+		Registro.setSize(400, 370);
 		Registro.setLocationRelativeTo(null);
 		Registro.setVisible(false);
 		Registro.getContentPane().setBackground(new Color(241, 236, 235 ));
 		Registro.setResizable(false);
+		
+		// ALIMENTAION
+		
+		JLabel alimentacion1 = new JLabel("<html><body style='text-align: center'>Condiciones:<br> - Mayor de 6 caracteres");
+		alimentacion1.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion1.setBounds(132, 280, 250, 25);
+		alimentacion1.setForeground(new Color(56, 53, 52 ));
+		alimentacion1.setVisible(false);
+		Registro.add(alimentacion1);
+		
+		JLabel fondo1 = new JLabel(" ");
+		fondo1.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo1.setBounds(0, 280, 400, 25);
+		fondo1.setBackground(new Color(40, 116, 166 , 50));
+		fondo1.setOpaque(true);
+		fondo1.setVisible(false);
+		Registro.add(fondo1);
+		
+		
+		JLabel alimentacion2 = new JLabel("<html><body style='text-align: center'>Condiciones:<br> - Mayor de 8 caracteres <br> - Contener mayusculas y minusculas <br> - Contener numeros");
+		alimentacion2.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion2.setBounds(100, 280, 250, 50);
+		alimentacion2.setForeground(new Color(56, 53, 52 ));
+		alimentacion2.setVisible(false);
+		Registro.add(alimentacion2);
+		
+		JLabel fondo2 = new JLabel(" ");
+		fondo2.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo2.setBounds(0, 280, 400, 50);
+		fondo2.setBackground(new Color(40, 116, 166 , 50));
+		fondo2.setOpaque(true);
+		fondo2.setVisible(false);
+		Registro.add(fondo2);
+		
+		
+		JLabel alimentacion3 = new JLabel("<html><body style='text-align: center'>Contraseña incorrecta");
+		alimentacion3.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion3.setBounds(132, 280, 250, 25);
+		alimentacion3.setForeground(new Color(236, 112, 99 ));
+		alimentacion3.setVisible(false);
+		Registro.add(alimentacion3);
+		
+		JLabel fondo3 = new JLabel(" ");
+		fondo3.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo3.setBounds(0, 275, 400, 25);
+		fondo3.setBackground(new Color(40, 116, 166 , 50));
+		fondo3.setOpaque(true);
+		fondo3.setVisible(false);
+		Registro.add(fondo3);
+		
+		
+		JLabel alimentacion4 = new JLabel("<html><body style='text-align: center'>Nombre de usuario en uso");
+		alimentacion4.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion4.setBounds(125, 280, 250, 25);
+		alimentacion4.setForeground(new Color(236, 112, 99 ));
+		alimentacion4.setVisible(false);
+		Registro.add(alimentacion4);
+		
+		JLabel fondo4 = new JLabel(" ");
+		fondo4.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo4.setBounds(0, 275, 400, 25);
+		fondo4.setBackground(new Color(40, 116, 166 , 50));
+		fondo4.setOpaque(true);
+		fondo4.setVisible(false);
+		Registro.add(fondo4);
+		
+		
+		JLabel alimentacion5 = new JLabel("<html><body style='text-align: center'>La contraseña no cumple <br> con las condiciones ");
+		alimentacion5.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion5.setBounds(125, 280, 250, 25);
+		alimentacion5.setForeground(new Color(236, 112, 99 ));
+		alimentacion5.setVisible(false);
+		Registro.add(alimentacion5);
+		
+		JLabel fondo5 = new JLabel(" ");
+		fondo5.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo5.setBounds(0, 275, 400, 25);
+		fondo5.setBackground(new Color(40, 116, 166 , 50));
+		fondo5.setOpaque(true);
+		fondo5.setVisible(false);
+		Registro.add(fondo5);
+		
+		
+		JLabel alimentacion6 = new JLabel("<html><body style='text-align: center'>El usuario no cumple <br> con las condiciones ");
+		alimentacion6.setFont(new Font("Arial", Font.BOLD, 10));
+		alimentacion6.setBounds(140, 280, 250, 25);
+		alimentacion6.setForeground(new Color(236, 112, 99 ));
+		alimentacion6.setVisible(false);
+		Registro.add(alimentacion6);
+		
+		JLabel fondo6 = new JLabel(" ");
+		fondo6.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fondo6.setBounds(0, 275, 400, 25);
+		fondo6.setBackground(new Color(40, 116, 166 , 50));
+		fondo6.setOpaque(true);
+		fondo6.setVisible(false);
+		Registro.add(fondo6);
+		
+		// ALIMENTACION END
 		
 		JLabel tituloR = new JLabel();
 		tituloR.setText("Locania");
@@ -72,6 +171,20 @@ class Login extends JFrame{
 		JTextField UsuarioR = new JTextField(10);
 		UsuarioR.setBounds(85, 70, 200, 30);
 		Registro.add(UsuarioR);
+		UsuarioR.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				alimentacion1.setVisible(false);
+				fondo1.setVisible(false);
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				alimentacion1.setVisible(true);
+				fondo1.setVisible(true);
+			}
+		});
 		UsuarioR.addKeyListener(new KeyListener() {
 			
 			@Override
@@ -110,6 +223,21 @@ class Login extends JFrame{
 		ContraR.setEchoChar('*');
 		ContraR.setBounds(85, 120, 200, 30);
 		Registro.add(ContraR);
+		ContraR.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				alimentacion2.setVisible(false);
+				fondo2.setVisible(false);
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				alimentacion2.setVisible(true);
+				fondo2.setVisible(true);
+			}
+		});
+		
 		ContraR.addKeyListener(new KeyListener() {
 			
 			@Override
@@ -144,6 +272,7 @@ class Login extends JFrame{
 		ContraRC.setEchoChar('*');
 		ContraRC.setBounds(85, 170, 200, 30);
 		Registro.add(ContraRC);
+		
 		ContraRC.addKeyListener(new KeyListener() {
 			
 			@Override
@@ -170,6 +299,7 @@ class Login extends JFrame{
 		JButton ISR = new JButton("Registrar");
 		ISR.setBounds(85, 210, 200, 30);
 		Registro.add(ISR);
+		ISR.setFocusPainted(true);
 		ISR.addActionListener(new ActionListener() {
 			
 			@Override
@@ -234,12 +364,16 @@ class Login extends JFrame{
 		
 		
 		
+
+		
+		
+		
 		// Ventana de Inicio de sesion
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Login");
 
-		setSize(400, 300);
+		setSize(400, 350);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		getContentPane().setBackground(new Color(241, 236, 235 ));
