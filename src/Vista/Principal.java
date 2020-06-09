@@ -21,7 +21,7 @@ class VentanaInicio extends JFrame {
 
 	public VentanaInicio() {
 
-		getContentPane().setLayout(new BorderLayout());
+		getContentPane().setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("DB Hotel");
 
@@ -92,6 +92,7 @@ class VentanaInicio extends JFrame {
 		menuMHabitacion.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, ActionEvent.CTRL_MASK));
 		menuMReservacion.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
 		
+		
 		//setBackground(new Color(133, 193, 233));
 		
 		JLabel tituloR = new JLabel();
@@ -132,7 +133,114 @@ class VentanaInicio extends JFrame {
 		f2.setOpaque(true);
 		add(f2);
 		
+		JLabel titulo = new JLabel();
+		titulo.setText("Locania");
+		titulo.setFont(new Font("Edwardian Script ITC", Font.BOLD, 60));
+		titulo.setBounds(20, 90, 200, 50);
+		titulo.setForeground(new Color(52, 73, 94));
+		add(titulo);
+		
+		JLabel subT = new JLabel();
+		subT.setText("Hotel");
+		subT.setFont(new Font("Perpetua Titling MT", Font.BOLD, 16));
+		subT.setBounds(90, 135, 60, 20);
+		subT.setForeground(new Color(52, 73, 94 ));
+		add(subT);
+		
+		JLabel tT = new JLabel();
+		tT.setText("Bienvenidos a Locania Hotel BD");
+		tT.setFont(new Font("Arial", Font.BOLD, 25));
+		tT.setBounds(300, 120, 400, 20);
+		tT.setForeground(new Color(52, 73, 94 ));
+		add(tT);
+		
+		
+		
+		JLabel tt = new JLabel();
+		tt.setText("<html><body style='text-align: left'>Bienvenidos a Locania Hotel BD, nosotros queremos ofrecerte la mejor experiencia <br> a la hora de realizar tu trabajo, para lograr nuestro objetivo hemos tratado de facilitar y agilizar tus tareas. <br> De parte de Locania Hotel te damos las gracias por formar parte de nuestra familia.");
+		tt.setFont(new Font("Arial", Font.BOLD, 16));
+		tt.setBounds(300, 170, 650, 75);
+		tt.setForeground(new Color(23, 32, 42 ));
+		add(tt);
+		
+		JLabel tg = new JLabel();
+		tg.setText("¡GRACIAS!");
+		tg.setFont(new Font("Arial", Font.BOLD, 35));
+		tg.setBounds(300, 260, 400, 30);
+		tg.setForeground(new Color(23, 32, 42 ));
+		add(tg);
+		
+		JLabel f1 = new JLabel();
+		f1.setText(" ");
+		f1.setFont(new Font("Arial", Font.BOLD, 16));
+		f1.setBounds(250, 100, 750, 220);
+		f1.setBackground(new Color(93, 173, 226, 60));
+		f1.setOpaque(true);
+		add(f1);
+		
+
+		
+		JLabel tD = new JLabel();
+		tD.setText("Doumentacion");
+		tD.setFont(new Font("Arial", Font.BOLD, 14));
+		tD.setBounds(300, 350, 120, 20);
+		tD.setForeground(new Color(23, 32, 42 ));
+		add(tD);
+		
+		JLabel tn = new JLabel();
+		tn.setText("Novedades");
+		tn.setFont(new Font("Arial", Font.BOLD, 12));
+		tn.setBounds(300, 380, 100, 20);
+		tn.setForeground(new Color(23, 32, 42 ));
+		add(tn);
+		
+		JLabel tp = new JLabel();
+		tp.setText("Problemas");
+		tp.setFont(new Font("Arial", Font.BOLD, 12));
+		tp.setBounds(300, 410, 100, 20);
+		tp.setForeground(new Color(23, 32, 42  ));
+		add(tp);
+		
+		JLabel tguia = new JLabel();
+		tguia.setText("Guia de uso");
+		tguia.setFont(new Font("Arial", Font.BOLD, 12));
+		tguia.setBounds(300, 440, 100, 20);
+		tguia.setForeground(new Color(23, 32, 42 ));
+		add(tguia);
+		
+		
+		JLabel ts = new JLabel();
+		ts.setText("Soporte");
+		ts.setFont(new Font("Arial", Font.BOLD, 14));
+		ts.setBounds(450, 350, 120, 20);
+		ts.setForeground(new Color(23, 32, 42 ));
+		add(ts);
+		
+		JLabel tto = new JLabel();
+		tto.setText("Tutoriales");
+		tto.setFont(new Font("Arial", Font.BOLD, 12));
+		tto.setBounds(450, 380, 100, 20);
+		tto.setForeground(new Color(23, 32, 42 ));
+		add(tto);
+		
+		
+		JLabel ver = new JLabel();
+		ver.setText(" Version 1.0.0");
+		ver.setFont(new Font("Arial", Font.BOLD, 12));
+		ver.setBounds(20, 600, 400, 30);
+		ver.setForeground(new Color(23, 32, 42 ));
+		add(ver);
+		
+		JLabel ed = new JLabel();
+		ed.setText(" Edicion Global 32 bit, 64bits");
+		ed.setFont(new Font("Arial", Font.BOLD, 12));
+		ed.setBounds(120, 600, 400, 30);
+		ed.setForeground(new Color(23, 32, 42 ));
+		add(ed);
+		
 		JDesktopPane desktopPane = new JDesktopPane();
+		
+		
 	}
 }
 
