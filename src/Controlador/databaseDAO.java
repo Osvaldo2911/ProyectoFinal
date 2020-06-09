@@ -170,4 +170,22 @@ public class databaseDAO {
 		}
 	}
 	
+	public Registro buscarRegistroLogin(String nombre, String contraseña) {
+		
+		String sql = "SELECT * FROM registro WHERE nombre = BINARY '"+nombre+"'"+" AND "+"contraseña = BINARY '"+contraseña+"'";
+		
+		ResultSet res = new ConexionBD().ejecutarConsultaRegistros(sql);
+		
+		try {
+			res.last();
+			
+			return new Registro (res.getString("Nombre"), res.getString(2));
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			
+			return null;
+		}
+	}
+	
 }
