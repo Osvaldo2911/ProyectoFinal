@@ -30,6 +30,8 @@ class Login extends JFrame{
 		Registro.getContentPane().setBackground(new Color(241, 236, 235 ));
 		Registro.setResizable(false);
 		
+		databaseDAO b = new databaseDAO();
+		
 		// ALIMENTAION
 		
 		JLabel alimentacion1 = new JLabel("<html><body style='text-align: center'>Condiciones:<br> - Mayor de 6 caracteres");
@@ -368,7 +370,6 @@ class Login extends JFrame{
 				
 				if (UsuarioR.getText().length() >= 6) {
 					
-					databaseDAO b = new databaseDAO();
 					String UsR = UsuarioR.getText().replace(" ", "");
 					Modelo.Registro encontrado = b.buscarRegistro(UsR);
 					boolean en;
@@ -607,11 +608,30 @@ class Login extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Login");
 
-		setSize(400, 350);
+		setSize(400, 370);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		getContentPane().setBackground(new Color(241, 236, 235 ));
 		setResizable(false);
+		
+		//Retroalimentacion
+		
+		JLabel ali1 = new JLabel("<html><body style='text-align: center'>El Usuario o la contraseña<br>son incorrectos");
+		ali1.setFont(new Font("Arial", Font.BOLD, 10));
+		ali1.setBounds(125, 280, 250, 25);
+		ali1.setForeground(new Color(236, 112, 99 ));
+		ali1.setVisible(false);
+		add(ali1);
+		
+		JLabel fo1 = new JLabel(" ");
+		fo1.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+		fo1.setBounds(0, 280, 400, 25);
+		fo1.setBackground(new Color(40, 116, 166 , 50));
+		fo1.setOpaque(true);
+		fo1.setVisible(false);
+		add(fo1);
+		
+		//Retroalimentacion END
 		
 		JLabel titulo = new JLabel();
 		titulo.setText("Locania");
@@ -655,6 +675,21 @@ class Login extends JFrame{
 		Usuario.setText("");
 		Usuario.setBounds(85, 120, 200, 30);
 		add(Usuario);
+		Usuario.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				ali1.setVisible(false);
+				fo1.setVisible(false);
+				
+			}
+		});
 		
 		JLabel lvContraseña = new JLabel("Contraseña");
 		lvContraseña.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
@@ -667,10 +702,52 @@ class Login extends JFrame{
 		Contra.setEchoChar('*');
 		Contra.setBounds(85, 170, 200, 30);
 		add(Contra);
+		Contra.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				ali1.setVisible(false);
+				fo1.setVisible(false);
+				
+			}
+		});
 		
 		JButton IS = new JButton("Iniciar Sesion");
 		IS.setBounds(85, 210, 200, 30);
 		add(IS);
+		IS.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String us = Usuario.getText().replace(" ", "");
+				String co = Contra.getText().replace(" ", "");
+				Modelo.Registro enc = b.buscarRegistroLogin(us, co);
+				
+				boolean enl;
+				try {
+					enl = enc.getNombre().equals(us) && enc.getContraseña().equals(co);
+				} catch (java.lang.NullPointerException e2) {
+					enl = false;
+				}
+				
+				if (enl) {
+					// programa
+					System.out.println("Entraste");
+				} else {
+					ali1.setVisible(true);
+					fo1.setVisible(true);
+					Usuario.setText("");
+					Contra.setText("");
+				}
+				
+			}
+		});
 
 		JLabel registrate = new JLabel("Registrate");
 		registrate.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
