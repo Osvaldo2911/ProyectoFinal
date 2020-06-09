@@ -3,6 +3,8 @@ import javax.swing.*;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
+import Controlador.databaseDAO;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -172,10 +174,20 @@ class Login extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(true) {
-					
+				databaseDAO b = new databaseDAO();
+				Modelo.Registro encontrado = b.buscarRegistro("Osvaldo");
+				boolean en;
+				try {
+					en = encontrado.getNombre().equals("Osvaldo");
+				} catch (java.lang.NullPointerException e2) {
+					en = false;
 				}
 				
+				if (en) {
+					System.out.println("Nombre en uso");
+				}else {
+					System.out.println("Nombre disponible");
+				}
 			}
 		});
 		
