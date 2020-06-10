@@ -14,8 +14,8 @@ public class databaseDAO {
 	
 	//AGREGAR
 	public boolean agregarCliente(Cliente a) {
-		String sql = "insert into clientes Values('"+a.getCliente_ID()+"','"+a.getNombre()+"','"+a.getApellido()+"','"+a.getEdad()+"',"+a.getDireccion()+","+a.getCp()+",'"+a.getTelefono()+ 	"')";
-		
+		String sql = "insert into cliente Values('"+a.getCliente_ID()+"','"+a.getNombre()+"','"+a.getApellido()+"','"+a.getEdad()+"','"+a.getDireccion()+"',"+a.getCp()+",'"+a.getTelefono()+ "')";
+		System.out.println(sql);
 		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
         System.out.println("ALUMNO DAO: " + resultado);
 

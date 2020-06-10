@@ -22,6 +22,17 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 	
+	public Cliente(String nombre, String apellido, String edad, String direccion, String cp,
+			String telefono) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.direccion = direccion;
+		this.cp = cp;
+		this.telefono = telefono;
+	}
+	
 	public int getCliente_ID() {
 		return cliente_ID;
 	}
