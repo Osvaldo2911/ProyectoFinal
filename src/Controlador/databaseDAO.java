@@ -2,6 +2,7 @@ package Controlador;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import ConexionBaseDato.ConexionBD;
 import Modelo.Cliente;
@@ -72,6 +73,34 @@ public class databaseDAO {
 	}
 	
 	//Buscar
+	
+	public ArrayList<Cliente> buscarUsuariosConMatriz() {
+		ArrayList<Cliente> miLista = new ArrayList<Cliente>();
+		
+		Cliente c1;
+		
+		try {
+			ResultSet rs = new ConexionBD().ejecutarConsultaRegistros("SELECT * FROM cliente ");
+
+			while (rs.next()) {
+				c1 = new Cliente(0, null, null, null, null, null, null);
+				c1.setCliente_ID(rs.getInt("cliente_ID"));
+				c1.setNombre(rs.getString("Nombre"));
+				c1.setApellido(rs.getString("Apellido"));
+				c1.setEdad(rs.getString("Edad"));
+				c1.setDireccion(rs.getString("Direccion"));
+				c1.setCp(rs.getString("CP"));
+				c1.setTelefono(rs.getString("Telefono"));
+				miLista.add(c1);
+			}
+			rs.close();
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+
+		}
+		return miLista;
+	}
 	
 	public Registro buscarRegistro(String nombre) {
 		
