@@ -39,14 +39,14 @@ class ModificarC extends JFrame{
 			
 			JLabel ra1 = new JLabel("<html><body style='text-align: center'>Condiciones:<br> - Mayor de 3 caracteres");
 			ra1.setFont(new Font("Arial", Font.BOLD, 10));
-			ra1.setBounds(90, 480, 250, 25);
+			ra1.setBounds(90, 530, 250, 25);
 			ra1.setForeground(new Color(56, 53, 52 ));
 			ra1.setVisible(false);
 			ac.add(ra1);
 			
 			JLabel fo1 = new JLabel(" ");
 			fo1.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fo1.setBounds(0, 480, 400, 25);
+			fo1.setBounds(0, 530, 400, 25);
 			fo1.setBackground(new Color(40, 116, 166 , 50));
 			fo1.setOpaque(true);
 			fo1.setVisible(false);
@@ -54,14 +54,14 @@ class ModificarC extends JFrame{
 			
 			JLabel ra2 = new JLabel("<html><body style='text-align: center'>El nombre no cumple con condiciones<br> - Mayor de 3 caracteres");
 			ra2.setFont(new Font("Arial", Font.BOLD, 10));
-			ra2.setBounds(50, 480, 250, 25);
+			ra2.setBounds(50, 530, 250, 25);
 			ra2.setForeground(new Color(56, 53, 52));
 			ra2.setVisible(false);
 			ac.add(ra2);
 			
 			JLabel fo2 = new JLabel(" ");
 			fo2.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fo2.setBounds(0, 480, 400, 25);
+			fo2.setBounds(0, 530, 400, 25);
 			fo2.setBackground(new Color(169, 50, 38  , 50));
 			fo2.setOpaque(true);
 			fo2.setVisible(false);
@@ -69,14 +69,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion3 = new JLabel("<html><body style='text-align: center'>Apellido Paterno Apellido Materno ");
 			alimentacion3.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion3.setBounds(50, 480, 250, 25);
+			alimentacion3.setBounds(50, 530, 250, 25);
 			alimentacion3.setForeground(new Color(56, 53, 52 ));
 			alimentacion3.setVisible(false);
 			ac.add(alimentacion3);
 			
 			JLabel fondo3 = new JLabel(" ");
 			fondo3.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo3.setBounds(0, 480, 400, 25);
+			fondo3.setBounds(0, 530, 400, 25);
 			fondo3.setBackground(new Color(40, 116, 166 , 50));
 			fondo3.setOpaque(true);
 			fondo3.setVisible(false);
@@ -85,14 +85,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion4 = new JLabel("<html><body style='text-align: center'>Numero, Nombre de la calle, Municipio, Estado");
 			alimentacion4.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion4.setBounds(25, 480, 250, 25);
+			alimentacion4.setBounds(25, 530, 250, 25);
 			alimentacion4.setForeground(new Color(56, 53, 52 ));
 			alimentacion4.setVisible(false);
 			ac.add(alimentacion4);
 			
 			JLabel fondo4 = new JLabel(" ");
 			fondo4.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo4.setBounds(0, 480, 400, 25);
+			fondo4.setBounds(0, 530, 400, 25);
 			fondo4.setBackground(new Color(40, 116, 166 , 50));
 			fondo4.setOpaque(true);
 			fondo4.setVisible(false);
@@ -101,14 +101,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion5 = new JLabel("<html><body style='text-align: center'># # # -# # # -# # # #");
 			alimentacion5.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion5.setBounds(50, 480, 250, 25);
+			alimentacion5.setBounds(50, 530, 250, 25);
 			alimentacion5.setForeground(new Color(56, 53, 52 ));
 			alimentacion5.setVisible(false);
 			ac.add(alimentacion5);
 			
 			JLabel fondo5 = new JLabel(" ");
 			fondo5.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo5.setBounds(0, 480, 400, 25);
+			fondo5.setBounds(0, 530, 400, 25);
 			fondo5.setBackground(new Color(40, 116, 166 , 50));
 			fondo5.setOpaque(true);
 			fondo5.setVisible(false);
@@ -117,14 +117,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion6 = new JLabel("<html><body style='text-align: center'>Numero de telefono Incorecto");
 			alimentacion6.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion6.setBounds(50, 480, 250, 25);
+			alimentacion6.setBounds(50, 530, 250, 25);
 			alimentacion6.setForeground(new Color(236, 112, 99 ));
 			alimentacion6.setVisible(false);
 			ac.add(alimentacion6);
 			
 			JLabel fondo6 = new JLabel(" ");
 			fondo6.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo6.setBounds(0, 480, 400, 25);
+			fondo6.setBounds(0, 530, 400, 25);
 			fondo6.setBackground(new Color(40, 116, 166 , 50));
 			fondo6.setOpaque(true);
 			fondo6.setVisible(false);
@@ -132,14 +132,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion7 = new JLabel("<html><body style='text-align: center'>Registro con exito");
 			alimentacion7.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion7.setBounds(50, 480, 250, 25);
+			alimentacion7.setBounds(50, 530, 250, 25);
 			alimentacion7.setForeground(new Color(24, 106, 59 ));
 			alimentacion7.setVisible(false);
 			ac.add(alimentacion7);
 			
 			JLabel fondo7 = new JLabel(" ");
 			fondo7.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo7.setBounds(0, 480, 400, 25);
+			fondo7.setBounds(0, 530, 400, 25);
 			fondo7.setBackground(new Color(40, 116, 166 , 50));
 			fondo7.setOpaque(true);
 			fondo7.setVisible(false);
@@ -147,14 +147,14 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion8 = new JLabel("<html><body style='text-align: center'>Registro fallido");
 			alimentacion8.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion8.setBounds(50, 480, 250, 25);
+			alimentacion8.setBounds(50, 530, 250, 25);
 			alimentacion8.setForeground(new Color(236, 112, 99 ));
 			alimentacion8.setVisible(false);
 			ac.add(alimentacion8);
 			
 			JLabel fondo8 = new JLabel(" ");
 			fondo8.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo8.setBounds(0, 480, 400, 25);
+			fondo8.setBounds(0, 530, 400, 25);
 			fondo8.setBackground(new Color(40, 116, 166 , 50));
 			fondo8.setOpaque(true);
 			fondo8.setVisible(false);
@@ -162,35 +162,58 @@ class ModificarC extends JFrame{
 			
 			JLabel alimentacion9 = new JLabel("<html><body style='text-align: center'>Campo Vacio");
 			alimentacion9.setFont(new Font("Arial", Font.BOLD, 10));
-			alimentacion9.setBounds(50, 480, 250, 25);
+			alimentacion9.setBounds(50, 530, 250, 25);
 			alimentacion9.setForeground(new Color(56, 53, 52 ));
 			alimentacion9.setVisible(false);
 			ac.add(alimentacion9);
 			
 			JLabel fondo9 = new JLabel(" ");
 			fondo9.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
-			fondo9.setBounds(0, 480, 400, 25);
+			fondo9.setBounds(0, 530, 400, 25);
 			fondo9.setBackground(new Color(40, 116, 166 , 50));
 			fondo9.setOpaque(true);
 			fondo9.setVisible(false);
 			ac.add(fondo9);
+			
+			JLabel rab1 = new JLabel("<html><body style='text-align: center'>No se encontro el Usuario");
+			rab1.setFont(new Font("Arial", Font.BOLD, 10));
+			rab1.setBounds(90, 530, 250, 25);
+			rab1.setForeground(new Color(56, 53, 52 ));
+			rab1.setVisible(false);
+			ac.add(rab1);
+			
+			JLabel fob1 = new JLabel(" ");
+			fob1.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+			fob1.setBounds(0, 530, 400, 25);
+			fob1.setBackground(new Color(169, 50, 38, 50));
+			fob1.setOpaque(true);
+			fob1.setVisible(false);
+			ac.add(fob1);
 			
 			
 		//Retroalimentacion END
 			
 		
 			
-		JLabel lT = new JLabel("Registro de un cliente");
+		JLabel lT = new JLabel("Modificar un cliente");
 		lT.setFont(new Font("Arial", Font.ITALIC, 18));
 		lT.setBounds(60, 5, 200, 30);
 		ac.add(lT);
 			
+		JLabel lID = new JLabel("ID de cliente");
+		lID.setBounds(20, 30, 200, 30);
+		ac.add(lID);
+		
+		JTextField ID = new JTextField(10);
+		ID.setBounds(20, 60, 250, 30);
+		ac.add(ID);
+		
 		JLabel lNo = new JLabel("Nombre");
-		lNo.setBounds(20, 30, 200, 30);
+		lNo.setBounds(20, 90, 200, 30);
 		ac.add(lNo);
 		
 		JTextField Nombre = new JTextField(10);
-		Nombre.setBounds(20, 60, 250, 30);
+		Nombre.setBounds(20, 120, 250, 30);
 		ac.add(Nombre);
 		Nombre.addFocusListener(new FocusListener() {
 			
@@ -267,11 +290,11 @@ class ModificarC extends JFrame{
 		});
 		
 		JLabel lAp = new JLabel("Apellido");
-		lAp.setBounds(20, 90, 200, 30);
+		lAp.setBounds(20, 150, 200, 30);
 		ac.add(lAp);
 		
 		JTextField Apellido = new JTextField(10);
-		Apellido.setBounds(20, 120, 250, 30);
+		Apellido.setBounds(20, 180, 250, 30);
 		ac.add(Apellido);
 		Apellido.addFocusListener(new FocusListener() {
 			
@@ -348,7 +371,7 @@ class ModificarC extends JFrame{
 		});
 		
 		JLabel lEd = new JLabel("Edad");
-		lEd.setBounds(20, 150, 200, 30);
+		lEd.setBounds(20, 210, 200, 30);
 		ac.add(lEd);
 		
 		MaskFormatter mask = null;
@@ -359,7 +382,7 @@ class ModificarC extends JFrame{
 			e1.printStackTrace();
 		}
 		JFormattedTextField Edad = new JFormattedTextField(mask);
-		Edad.setBounds(20, 180, 250, 30);
+		Edad.setBounds(20, 240, 250, 30);
 		ac.add(Edad);
 		Edad.addKeyListener(new KeyListener() {
 			
@@ -383,11 +406,11 @@ class ModificarC extends JFrame{
 		});
 		
 		JLabel lDi = new JLabel("Direccion");
-		lDi.setBounds(20, 210, 200, 30);
+		lDi.setBounds(20, 270, 200, 30);
 		ac.add(lDi);
 		
 		JTextField Direccion = new JTextField(10);
-		Direccion.setBounds(20, 240, 250, 30);
+		Direccion.setBounds(20, 300, 250, 30);
 		ac.add(Direccion);
 		Direccion.addFocusListener(new FocusListener() {
 			
@@ -439,7 +462,7 @@ class ModificarC extends JFrame{
 		});
 		
 		JLabel lCo = new JLabel("Codigo Postal");
-		lCo.setBounds(20, 270, 200, 30);
+		lCo.setBounds(20, 330, 200, 30);
 		ac.add(lCo);
 		
 		MaskFormatter mask2 = null;
@@ -450,7 +473,7 @@ class ModificarC extends JFrame{
 			e1.printStackTrace();
 		}
 		JFormattedTextField CP = new JFormattedTextField(mask2);
-		CP.setBounds(20, 300, 250, 30);
+		CP.setBounds(20, 360, 250, 30);
 		ac.add(CP);
 		CP.addKeyListener(new KeyListener() {
 			
@@ -474,7 +497,7 @@ class ModificarC extends JFrame{
 		});
 		
 		JLabel lTe = new JLabel("Telefono");
-		lTe.setBounds(20, 330, 200, 30);
+		lTe.setBounds(20, 390, 200, 30);
 		ac.add(lTe);
 		
 		MaskFormatter mask3 = null;
@@ -485,7 +508,7 @@ class ModificarC extends JFrame{
 			e1.printStackTrace();
 		}
 		JFormattedTextField Telefono = new JFormattedTextField(mask3);
-		Telefono.setBounds(20, 360, 250, 30);
+		Telefono.setBounds(20, 420, 250, 30);
 		ac.add(Telefono);
 		Telefono.addFocusListener(new FocusListener() {
 			
@@ -556,11 +579,15 @@ class ModificarC extends JFrame{
 			}
 		});
 		
-
+		JButton Buscar = new JButton("Buscar");
+		Buscar.setBounds(20, 470, 250, 30);
+		ac.add(Buscar);
+		Buscar.setVisible(true);
 		
-		JButton Registrar = new JButton("Registrar");
-		Registrar.setBounds(20, 420, 250, 30);
+		JButton Registrar = new JButton("Actualizar");
+		Registrar.setBounds(20, 470, 250, 30);
 		ac.add(Registrar);
+		Registrar.setVisible(false);
 		Registrar.addActionListener(new ActionListener() {
 			
 			@Override
@@ -591,15 +618,19 @@ class ModificarC extends JFrame{
 									if (!Telefono.getText().equals("   -   -    ") && cont == 10 ) {
 										te=Telefono.getText();
 										Id = Id+1;
-										boolean res= b.agregarCliente(new Cliente(n, a, e.substring(0, 2), d, cp, te.replace("-", "")));
+										boolean res= b.modificarCliente(new Cliente(Integer.parseInt(ID.getText()),n, a, e.substring(0, 2), d, cp, te.replace("-", "")));
 										if (res) {
 											
+											ID.setText("");
 											Nombre.setText("");
 											Apellido.setText("");
 											Edad.setText("");
 											Direccion.setText("");
 											CP.setText("");
 											Telefono.setText("");
+											
+											Registrar.setVisible(false);
+											Buscar.setVisible(true);
 											
 											
 											ra1.setVisible(false);
@@ -769,9 +800,76 @@ class ModificarC extends JFrame{
 			}
 		});
 		
+		Buscar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Cliente en = null;
+				boolean encontrado = false;
+				try {
+					en = b.buscarCliente(Integer.parseInt(ID.getText()));
+					 if (en.getCliente_ID() == Integer.parseInt(ID.getText()) && ID.getText().length() !=0) {
+							Nombre.setText(en.getNombre());
+							Apellido.setText(en.getApellido());
+							Edad.setText(en.getEdad());
+							CP.setText(en.getCp());
+							Direccion.setText(en.getDireccion());
+							Telefono.setText(en.getTelefono());
+							
+							Registrar.setVisible(true);
+							Buscar.setVisible(false);
+							
+							
+						} else {
+							ra1.setVisible(false);
+							fo1.setVisible(false);
+							ra2.setVisible(false);
+							fo2.setVisible(false);
+							alimentacion3.setVisible(false);
+							fondo3.setVisible(false);
+							alimentacion4.setVisible(false);
+							fondo4.setVisible(false);
+							alimentacion5.setVisible(false);
+							fondo5.setVisible(false);
+							alimentacion6.setVisible(false);
+							fondo6.setVisible(false);
+							alimentacion7.setVisible(true);
+							fondo7.setVisible(true);
+							alimentacion8.setVisible(false);
+							fondo8.setVisible(false);
+							alimentacion9.setVisible(false);
+							fondo9.setVisible(false);
+							rab1.setVisible(true);
+							fob1.setVisible(true);
+						}
+				}catch (Exception e1) {
+					ra1.setVisible(false);
+					fo1.setVisible(false);
+					ra2.setVisible(false);
+					fo2.setVisible(false);
+					alimentacion3.setVisible(false);
+					fondo3.setVisible(false);
+					alimentacion4.setVisible(false);
+					fondo4.setVisible(false);
+					alimentacion5.setVisible(false);
+					fondo5.setVisible(false);
+					alimentacion6.setVisible(false);
+					fondo6.setVisible(false);
+					alimentacion7.setVisible(true);
+					fondo7.setVisible(true);
+					alimentacion8.setVisible(false);
+					fondo8.setVisible(false);
+					alimentacion9.setVisible(false);
+					fondo9.setVisible(false);
+					rab1.setVisible(true);
+					fob1.setVisible(true);
+				}
+			}
+		});
+		
 		JLabel Cancelar = new JLabel("Cancelar");
 		Cancelar.setFont(new Font("Arial", Font.BOLD, 12));
-		Cancelar.setBounds(20, 450, 90, 20);
+		Cancelar.setBounds(20, 500, 90, 20);
 		Cancelar.setForeground(new Color(56, 53, 52 ));
 		ac.add(Cancelar);
 		Cancelar.addMouseListener(new MouseListener() {

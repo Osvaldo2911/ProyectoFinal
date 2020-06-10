@@ -23,26 +23,6 @@ public class databaseDAO {
 		
 	}
 	
-	public boolean agregarReservacion(Reservacion a) {
-		String sql = "insert into reservacion Values('"+a.getReserva_ID()+"','"+a.getFechaIngreso()+"','"+a.getFechaSalida()+"','"+a.getCantidadPersonas()+","+a.getTipoHabitacion()+","+a.getCliente_ID()+"')";
-		
-		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
-        System.out.println("ALUMNO DAO: " + resultado);
-
-        return resultado;
-		
-	}
-	
-	public boolean agregarHabitacion(Habitacion a) {
-		String sql = "insert into habitacion Values('"+a.getHabitacion_ID()+"','"+a.getTipoHabitacion()+"','"+a.getNroHabitacion()+"','"+a.getNroPiso()+","+a.getPrecio()+"')";
-		
-		boolean resultado = new ConexionBD().ejecutarInstruccion(sql);
-        System.out.println("ALUMNO DAO: " + resultado);
-
-        return resultado;
-		
-	}
-	
 	public boolean agregarRegistro(Registro a) {
 	
 		String sql ="INSERT INTO registro (Nombre, Contraseña) VALUES ('"+a.getNombre()+"','"+a.getContraseña()+"')";
@@ -68,18 +48,6 @@ public class databaseDAO {
 		
 	} 
 	
-	public boolean eliminarReservacion(int reserva_ID) {
-		
-		String sql = "INSERT INTO reseracionborrada SELECT * FROM reservacion WHERE reserva_ID = '"+reserva_ID+"'";
-		boolean duplicado =  new ConexionBD().ejecutarInstruccion(sql);
-		
-		sql = "Delete From reservacion where reserva_ID = '"+reserva_ID+"'";
-		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
-		
-		return res;
-		
-	}
-	
 	public boolean eliminarRegistro(String a) {
 		
 		String sql = "Delete From registro where nombre = '"+a+"'";
@@ -95,43 +63,15 @@ public class databaseDAO {
 		String sql = "Update cliente Set Nombre = '"+a.getNombre()+"'"
 				+ ", Apellido = '"+ a.getApellido()+"'"
 				+ ", Edad = '"+a.getEdad()+"'"
-				+ ", Direccion = "+a.getDireccion()+""
-				+ ", CP = "+a.getCp()+""
+				+ ", Direccion = '"+a.getDireccion()+"'"
+				+ ", CP = '"+a.getCp()+"'"
 				+ ", Telefono = '"+a.getTelefono()+ "' WHERE cliente_ID='"+a.getCliente_ID()+"'";
 		
 		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
 		return res;
 	}
 	
-	public boolean modificarReservacion(Reservacion a) {
-		
-		String sql = "Update reservacion Set Fecha_Ingreso = '"+a.getFechaIngreso()+"'"
-				+ ", Fecha_Salida = '"+ a.getFechaSalida()+"'"
-				+ ", Cantidad_Personas = '"+a.getCantidadPersonas()+"'"
-				+ ", Tipo_Habitacion = "+a.getTipoHabitacion()+ "' WHERE Reserva_ID ='"+a.getReserva_ID()+"'";
-		
-		boolean res =  new ConexionBD().ejecutarInstruccion(sql);
-		return res;
-	}
-	
-	public Reservacion buscarReservacion(int reserva_ID) {
-		
-		
-		String sql = "SELECT * FROM reservacion WHERE reserva_ID = '"+reserva_ID+"'";
-		
-		ResultSet res = new ConexionBD().ejecutarConsultaRegistros(sql);
-		
-		try {
-			res.last();
-			
-			return new Reservacion(res.getInt(reserva_ID), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getInt(6));
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			
-			return null;
-		}
-	}
+	//Buscar
 	
 	public Registro buscarRegistro(String nombre) {
 		
