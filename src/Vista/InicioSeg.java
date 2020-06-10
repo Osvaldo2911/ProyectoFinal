@@ -737,7 +737,13 @@ class Login extends JFrame{
 				}
 				
 				if (enl) {
-					// programa
+					
+					
+					Principal p = new Principal();
+					String[] args = null;
+					p.main(args);
+					
+					
 					System.out.println("Entraste");
 				} else {
 					ali1.setVisible(true);

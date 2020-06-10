@@ -22,7 +22,8 @@ class VentanaInicio extends JFrame {
 	JMenu mConsulta;
 		JMenuItem menuConsulta;
 		
-	JPanel aCliente,eCliente,mCliente,Consulta;
+	
+	JInternalFrame aCliente,eCliente,mCliente,Consulta;
 
 	public VentanaInicio() {
 
@@ -278,6 +279,7 @@ class VentanaInicio extends JFrame {
 		menuMReservacion.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
 		
 		setJMenuBar(mBar);
+		
 		
 		
 		add(desktopPane);

@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import javax.management.StringValueExp;
 import javax.swing.*;
@@ -21,21 +22,60 @@ import Modelo.Cliente;
 
 class EliminarC extends JFrame{
 	
+public String[][] obtenerMatriz() {
+		
+		databaseDAO b=new databaseDAO();
+		ArrayList<Cliente>miLista=b.buscarUsuariosConMatriz();
+		
+		String matrizInfo[][]=new String[miLista.size()][7]; // aui le pones tus cajas que son we 
+		
+		for (int i = 0; i < miLista.size(); i++) {
+			matrizInfo[i][0]=miLista.get(i).getCliente_ID()+"";
+			matrizInfo[i][1]=miLista.get(i).getNombre()+"";
+			matrizInfo[i][2]=miLista.get(i).getApellido()+"";
+			matrizInfo[i][3]=miLista.get(i).getEdad()+"";
+			matrizInfo[i][4]=miLista.get(i).getDireccion()+"";
+			matrizInfo[i][5]=miLista.get(i).getCp()+"";
+			matrizInfo[i][6]=miLista.get(i).getTelefono()+"";
+		}
+			
+		return matrizInfo;
+	}
+
+	public void construirTabla1(JScrollPane a) {
 	
+	String titulos[]={ "Folio", "Nombre", "Primer Ap", "Segundo Ap","Domicilio","Numero Cel" };// aqui el nombre de las columnas
+	String informacion[][]=obtenerMatriz();
 	
-	public JPanel EliminarCliente(boolean visible) {
+	JTable t= new JTable(informacion,titulos);
+	a.setViewportView(t);
+	
+	}
+	
+	public JInternalFrame EliminarCliente(boolean visible) {
 		
 	
 		
-		JPanel ac = new JPanel();
+		JInternalFrame ac = new JInternalFrame();
 		
-			ac.setLayout(null);
-			ac.setSize(400, 400);
-			ac.setVisible(visible);
-			ac.setBackground(new Color(214, 219, 223));
-			ac.setOpaque(true);
+		ac.getContentPane().setLayout(null);
+		ac.setDefaultCloseOperation(HIDE_ON_CLOSE);
+		ac.setTitle("Eliminacion");
+		ac.setMaximizable(true);
+		ac.setIconifiable(true);
+		ac.setClosable(true);
+		ac.setResizable(true);
+		ac.setSize(400, 400);
+		ac.setVisible(visible);
+		ac.setBackground(new Color(214, 219, 223));
+		ac.setOpaque(true);
 			
 			databaseDAO b = new databaseDAO();
+			
+			JScrollPane miBarra1 = new JScrollPane();
+			miBarra1.setBounds(300, 30, 600, 450);
+			ac.add(miBarra1);
+			construirTabla1(miBarra1);
 			
 		//Retroalimentacion
 			
@@ -241,6 +281,7 @@ class EliminarC extends JFrame{
 									
 									boolean c = b.eliminarCliente(Integer.parseInt(ID.getText()));
 									if (c) {
+										construirTabla1(miBarra1);
 										Nombre.setText("");
 										Apellido.setText("");
 										Edad.setText("");

@@ -28,26 +28,16 @@ import Controlador.databaseDAO;
 import Modelo.Cliente;
 
 class Consultas extends JFrame{
+
 	
-	private void construirTabla1() {
-		String titulos[]={ "cliente_ID", "Nombre", "Apellido", "Edad","Direccion","CP","Telefono" };// aqui el nombre de las columnas
-		String informacion[][]=obtenerMatriz();
 
-		JTable miTabla1=new JTable(informacion,titulos);
-		miTabla1.setFillsViewportHeight(true);
+	public String[][] obtenerMatriz() {
 		
-		JScrollPane mibarrita = new JScrollPane(miTabla1);
+		databaseDAO b=new databaseDAO();
+		ArrayList<Cliente>miLista=b.buscarUsuariosConMatriz();
 		
-		add(mibarrita);
-	}
-
-	private String[][] obtenerMatriz() {
-
-		databaseDAO c=new databaseDAO();
-		ArrayList<Cliente>miLista=c.buscarUsuariosConMatriz();
-
 		String matrizInfo[][]=new String[miLista.size()][7]; // aui le pones tus cajas que son we 
-
+		
 		for (int i = 0; i < miLista.size(); i++) {
 			matrizInfo[i][0]=miLista.get(i).getCliente_ID()+"";
 			matrizInfo[i][1]=miLista.get(i).getNombre()+"";
@@ -57,19 +47,22 @@ class Consultas extends JFrame{
 			matrizInfo[i][5]=miLista.get(i).getCp()+"";
 			matrizInfo[i][6]=miLista.get(i).getTelefono()+"";
 		}
-
+			
 		return matrizInfo;
 	}
 
-
-
-	public JPanel ConsultarTabla(boolean visible) {
+	public JInternalFrame ConsultarTabla(boolean visible) {
 
 
 
-		JPanel ac = new JPanel();
-
-		ac.setLayout(null);
+		JInternalFrame ac = new JInternalFrame();
+		ac.getContentPane().setLayout(null);
+		ac.setDefaultCloseOperation(HIDE_ON_CLOSE);
+		ac.setTitle("Consultas");
+		ac.setMaximizable(true);
+		ac.setIconifiable(true);
+		ac.setClosable(true);
+		ac.setResizable(true);
 		ac.setSize(400, 400);
 		ac.setVisible(visible);
 		ac.setBackground(new Color(214, 219, 223));
@@ -94,9 +87,61 @@ class Consultas extends JFrame{
 		Consultar.setBounds(20, 160, 250, 30);
 		ac.add(Consultar);
 		
-		construirTabla1();
+		
+		
+		JLabel Cancelar = new JLabel("Cancelar");
+		Cancelar.setFont(new Font("Arial", Font.BOLD, 12));
+		Cancelar.setBounds(20, 190, 90, 20);
+		Cancelar.setForeground(new Color(56, 53, 52 ));
+		ac.add(Cancelar);
+		Cancelar.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Cancelar.setForeground(new Color(48, 102, 190));
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Cancelar.setForeground(new Color(133, 193, 233));
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				Cancelar.setForeground(new Color(56, 53, 52));
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				Cancelar.setForeground(new Color(48, 102, 190));
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				ac.setVisible(false);
+				
+			}
+		});
+		
+		JScrollPane miBarra1 = new JScrollPane();
+		miBarra1.setBounds(300, 30, 600, 450);
+		ac.add(miBarra1);
+		construirTabla1(miBarra1);
 
 		return ac;
+	}
+	
+	public void construirTabla1(JScrollPane a) {
+		
+		String titulos[]={ "Folio", "Nombre", "Primer Ap", "Segundo Ap","Domicilio","Numero Cel" };// aqui el nombre de las columnas
+		String informacion[][]=obtenerMatriz();
+		
+		JTable t= new JTable(informacion,titulos);
+		a.setViewportView(t);
+		
 	}
 }
 
