@@ -179,9 +179,14 @@ class EliminarC extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Cliente en = b.buscarCliente(Integer.parseInt(ID.getText()));
+				Cliente en = b.buscarRegistro2(Integer.parseInt(ID.getText()));
 				
 				if (en.getCliente_ID() == Integer.parseInt(ID.getText())) {
+					Nombre.setText(en.getNombre());
+					Apellido.setText(en.getApellido());
+					Edad.setText(en.getEdad());
+					CP.setText(en.getCp());
+					Telefono.setText(en.getTelefono());
 					
 				} else {
 					ra1.setVisible(true);
