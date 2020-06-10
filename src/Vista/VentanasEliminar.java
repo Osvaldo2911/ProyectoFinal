@@ -11,8 +11,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.ParseException;
 
+import javax.management.StringValueExp;
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import Controlador.databaseDAO;
 import Modelo.Cliente;
@@ -67,6 +69,21 @@ class EliminarC extends JFrame{
 			fo2.setVisible(false);
 			ac.add(fo2);
 			
+			JLabel ra3 = new JLabel("<html><body style='text-align: center'>Fallo la eliminacion");
+			ra3.setFont(new Font("Arial", Font.BOLD, 10));
+			ra3.setBounds(90, 480, 250, 25);
+			ra3.setForeground(new Color(56, 53, 52 ));
+			ra3.setVisible(false);
+			ac.add(ra3);
+			
+			JLabel fo3 = new JLabel(" ");
+			fo3.setFont(new Font("Perpetua Titling MT", Font.BOLD, 10));
+			fo3.setBounds(0, 480, 400, 25);
+			fo3.setBackground(new Color(169, 50, 38, 50));
+			fo3.setOpaque(true);
+			fo3.setVisible(false);
+			ac.add(fo3);
+			
 		//Retroalimentacion END
 			
 		
@@ -79,31 +96,6 @@ class EliminarC extends JFrame{
 		JLabel lID = new JLabel("ID de cliente");
 		lID.setBounds(20, 30, 200, 30);
 		ac.add(lID);
-		
-		JTextField ID = new JTextField(10);
-		ID.setBounds(20, 60, 250, 30);
-		ac.add(ID);
-		ID.addKeyListener(new KeyListener() {
-			
-			@Override
-			public void keyTyped(KeyEvent e) {
-				char car = e.getKeyChar();
-		        if((car<'0' || car>'9')) {
-		            	e.consume();
-		        }
-			}
-			
-			@Override
-			public void keyReleased(KeyEvent e) {
-				
-			}
-			
-			@Override
-			public void keyPressed(KeyEvent e) {
-				
-			}
-		});
-		
 		
 		JLabel lNo = new JLabel("Nombre");
 		lNo.setBounds(20, 90, 200, 30);
@@ -171,29 +163,116 @@ class EliminarC extends JFrame{
 		ac.add(Telefono);
 		Telefono.setEnabled(false);
 		
-		JButton Registrar = new JButton("Eliminar");
+		JButton Registrar = new JButton("Buscar");
 		Registrar.setBounds(20, 400, 250, 30);
 		ac.add(Registrar);
+		Registrar.setVisible(true);
+		
+		JButton Confirmar = new JButton("Confirmar");
+		Confirmar.setBounds(20, 400, 250, 30);
+		ac.add(Confirmar);
+		Confirmar.setVisible(false);
+		
+		JTextField ID = new JTextField(10);
+		ID.setBounds(20, 60, 250, 30);
+		ac.add(ID);
+		ID.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				
+				ra1.setVisible(false);
+				fo1.setVisible(false);
+				ra2.setVisible(false);
+				fo2.setVisible(false);
+				ra3.setVisible(false);
+				fo3.setVisible(false);
+				
+			}
+		});
+		ID.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char car = e.getKeyChar();
+		        if((car<'0' || car>'9')) {
+		            	e.consume();
+		        }
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+			}
+		});
 		
 		Registrar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Cliente en = b.buscarRegistro2(Integer.parseInt(ID.getText()));
-				
-				if (en.getCliente_ID() == Integer.parseInt(ID.getText())) {
-					Nombre.setText(en.getNombre());
-					Apellido.setText(en.getApellido());
-					Edad.setText(en.getEdad());
-					CP.setText(en.getCp());
-					Telefono.setText(en.getTelefono());
-					
-				} else {
+				Cliente en = null;
+				boolean encontrado = false;
+				try {
+					en = b.buscarCliente(Integer.parseInt(ID.getText()));
+					 if (en.getCliente_ID() == Integer.parseInt(ID.getText()) && ID.getText().length() !=0) {
+							Nombre.setText(en.getNombre());
+							Apellido.setText(en.getApellido());
+							Edad.setText(en.getEdad());
+							CP.setText(en.getCp());
+							Telefono.setText(en.getTelefono());
+							Registrar.setVisible(false);
+							Confirmar.setVisible(true);
+							
+							Confirmar.addActionListener(new ActionListener() {
+								
+								@Override
+								public void actionPerformed(ActionEvent arg0) {
+									
+									boolean c = b.eliminarCliente(Integer.parseInt(ID.getText()));
+									if (c) {
+										Nombre.setText("");
+										Apellido.setText("");
+										Edad.setText("");
+										ID.setText("");
+										CP.setText("");
+										Telefono.setText("");
+										
+										Registrar.setVisible(true);
+										Confirmar.setVisible(false);
+										
+										ra2.setVisible(true);
+										fo2.setVisible(true);
+									}else {
+										ra3.setVisible(true);
+										fo3.setVisible(true);
+									}
+									
+								}
+							});
+							
+						} else {
+							ra1.setVisible(true);
+							fo1.setVisible(true);
+						}
+				}catch (Exception e1) {
 					ra1.setVisible(true);
 					fo1.setVisible(true);
 				}
 			}
 		});
+		
+
 		
 		
 		JLabel Cancelar = new JLabel("Cancelar");
