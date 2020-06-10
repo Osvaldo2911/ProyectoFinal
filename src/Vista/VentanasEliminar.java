@@ -76,24 +76,55 @@ class EliminarC extends JFrame{
 		lT.setBounds(60, 5, 200, 30);
 		ac.add(lT);
 			
+		JLabel lID = new JLabel("ID de cliente");
+		lID.setBounds(20, 30, 200, 30);
+		ac.add(lID);
+		
+		JTextField ID = new JTextField(10);
+		ID.setBounds(20, 60, 250, 30);
+		ac.add(ID);
+		ID.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char car = e.getKeyChar();
+		        if((car<'0' || car>'9')) {
+		            	e.consume();
+		        }
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+			}
+		});
+		
+		
 		JLabel lNo = new JLabel("Nombre");
-		lNo.setBounds(20, 30, 200, 30);
+		lNo.setBounds(20, 90, 200, 30);
 		ac.add(lNo);
 		
 		JTextField Nombre = new JTextField(10);
-		Nombre.setBounds(20, 60, 250, 30);
+		Nombre.setBounds(20, 120, 250, 30);
 		ac.add(Nombre);
+		Nombre.setEnabled(false);
 		
 		JLabel lAp = new JLabel("Apellido");
-		lAp.setBounds(20, 90, 200, 30);
+		lAp.setBounds(20, 150, 200, 30);
 		ac.add(lAp);
 		
 		JTextField Apellido = new JTextField(10);
-		Apellido.setBounds(20, 120, 250, 30);
+		Apellido.setBounds(20, 180, 250, 30);
 		ac.add(Apellido);
+		Apellido.setEnabled(false);
 		
 		JLabel lEd = new JLabel("Edad");
-		lEd.setBounds(20, 150, 200, 30);
+		lEd.setBounds(20, 210, 200, 30);
 		ac.add(lEd);
 		
 		MaskFormatter mask = null;
@@ -104,16 +135,9 @@ class EliminarC extends JFrame{
 			e1.printStackTrace();
 		}
 		JFormattedTextField Edad = new JFormattedTextField(mask);
-		Edad.setBounds(20, 180, 250, 30);
+		Edad.setBounds(20, 240, 250, 30);
 		ac.add(Edad);
-		
-		JLabel lDi = new JLabel("Direccion");
-		lDi.setBounds(20, 210, 200, 30);
-		ac.add(lDi);
-		
-		JTextField Direccion = new JTextField(10);
-		Direccion.setBounds(20, 240, 250, 30);
-		ac.add(Direccion);
+		Edad.setEnabled(false);
 		
 		JLabel lCo = new JLabel("Codigo Postal");
 		lCo.setBounds(20, 270, 200, 30);
@@ -129,6 +153,7 @@ class EliminarC extends JFrame{
 		JFormattedTextField CP = new JFormattedTextField(mask2);
 		CP.setBounds(20, 300, 250, 30);
 		ac.add(CP);
+		CP.setEnabled(false);
 		
 		JLabel lTe = new JLabel("Telefono");
 		lTe.setBounds(20, 330, 200, 30);
@@ -144,23 +169,31 @@ class EliminarC extends JFrame{
 		JFormattedTextField Telefono = new JFormattedTextField(mask3);
 		Telefono.setBounds(20, 360, 250, 30);
 		ac.add(Telefono);
+		Telefono.setEnabled(false);
 		
 		JButton Registrar = new JButton("Eliminar");
-		Registrar.setBounds(20, 420, 250, 30);
+		Registrar.setBounds(20, 400, 250, 30);
 		ac.add(Registrar);
 		
 		Registrar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Cliente en = b.buscarCliente(Integer.parseInt(ID.getText()));
 				
+				if (en.getCliente_ID() == Integer.parseInt(ID.getText())) {
+					
+				} else {
+					ra1.setVisible(true);
+					fo1.setVisible(true);
+				}
 			}
 		});
 		
 		
 		JLabel Cancelar = new JLabel("Cancelar");
 		Cancelar.setFont(new Font("Arial", Font.BOLD, 12));
-		Cancelar.setBounds(20, 450, 90, 20);
+		Cancelar.setBounds(20, 430, 90, 20);
 		Cancelar.setForeground(new Color(56, 53, 52 ));
 		ac.add(Cancelar);
 		Cancelar.addMouseListener(new MouseListener() {
@@ -193,7 +226,7 @@ class EliminarC extends JFrame{
 				Nombre.setText("");
 				Apellido.setText("");
 				Edad.setText("");
-				Direccion.setText("");
+				ID.setText("");
 				CP.setText("");
 				Telefono.setText("");
 				ac.setVisible(false);
