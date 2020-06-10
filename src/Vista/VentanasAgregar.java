@@ -61,9 +61,50 @@ class AgregarC extends JFrame{
 			databaseDAO b = new databaseDAO();
 			
 			JScrollPane miBarra1 = new JScrollPane();
-			miBarra1.setBounds(300, 30, 600, 450);
+			miBarra1.setBounds(300, 50, 600, 450);
 			ac.add(miBarra1);
 			construirTabla1(miBarra1);
+			
+			JLabel lT = new JLabel("Registro de un cliente");
+			lT.setFont(new Font("Arial", Font.ITALIC, 18));
+			lT.setBounds(400, 5, 200, 30);
+			ac.add(lT);
+			
+			//--------------------- 
+			
+			JLabel tituloR = new JLabel();
+			tituloR.setText("Locania");
+			tituloR.setFont(new Font("Edwardian Script ITC", Font.BOLD, 25));
+			tituloR.setBounds(25, 5, 80, 20);
+			tituloR.setForeground(new Color(236, 240, 241  ));
+			ac.add(tituloR);
+
+			JLabel subTR = new JLabel();
+			subTR.setText("Hotel");
+			subTR.setFont(new Font("Perpetua Titling MT", Font.BOLD, 8));
+			subTR.setBounds(50, 20, 40, 20);
+			subTR.setForeground(new Color(236, 240, 241 ));
+			ac.add(subTR);
+
+			JLabel lTR = new JLabel("");
+			lTR.setBounds(20, 0, 5, 40);
+			lTR.setBackground(new Color(10, 134, 238));
+			lTR.setOpaque(true);
+			ac.add(lTR);
+
+			JLabel lT2R = new JLabel("");
+			lT2R.setBounds(970, 0, 5, 40);
+			lT2R.setBackground(new Color(10, 134, 238));
+			lT2R.setOpaque(true);
+			ac.add(lT2R);
+
+			JLabel fTR = new JLabel("");
+			fTR.setBounds(0, 0, 1000, 40);
+			fTR.setBackground(new Color(48, 102, 190));
+			fTR.setOpaque(true);
+			ac.add(fTR);
+			
+			//----------------------
 			
 		//Retroalimentacion
 			
@@ -207,13 +248,7 @@ class AgregarC extends JFrame{
 			
 			
 		//Retroalimentacion END
-			
-		
-			
-		JLabel lT = new JLabel("Registro de un cliente");
-		lT.setFont(new Font("Arial", Font.ITALIC, 18));
-		lT.setBounds(60, 5, 200, 30);
-		ac.add(lT);
+
 			
 		JLabel lNo = new JLabel("Nombre");
 		lNo.setBounds(20, 30, 200, 30);

@@ -1,8 +1,12 @@
 package Controlador;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
 
 import ConexionBaseDato.ConexionBD;
 import Modelo.Cliente;
@@ -73,6 +77,8 @@ public class databaseDAO {
 	}
 	
 	//Buscar
+	
+	
 	
 	public ArrayList<Cliente> buscarUsuariosConMatriz() {
 		ArrayList<Cliente> miLista = new ArrayList<Cliente>();
